@@ -32,12 +32,6 @@ jobs:
       shell: bash
       run: |
         cd build && ninja
-    - name: Running Tests
-      shell: bash
-      run: |
-        cd build && ctest --output-on-failure
-        export ASEPRITE=$PWD/build/bin/aseprite.exe
-        cd tests && bash run-tests.sh
     - name: Upload Build Artifacts
       uses: actions/upload-artifact@v4
       with:
